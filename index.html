@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>グループヨガ | akekure</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,500&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ivory: #F7F5F0;
+      --denim: #5B7FA6;
+      --denim-light: #EAF0F7;
+      --denim-dark: #3D5C7A;
+      --sage: #8FA98A;
+      --warm-gray: #6B6560;
+      --text: #2E2B28;
+      --border: #D8D2CA;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--ivory);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    /* HEADER */
+    header {
+      background: var(--denim);
+      color: white;
+      text-align: center;
+      padding: 48px 24px 40px;
+    }
+
+    header .brand {
+      font-size: 13px;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 12px;
+    }
+
+    header h1 {
+      font-family: 'Cormorant', serif;
+      font-size: clamp(38px, 10vw, 56px);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      margin-bottom: 16px;
+    }
+
+    header .tagline {
+      font-size: 14px;
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 0.05em;
+    }
+
+    /* MAIN */
+    main {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* INFO CARDS */
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 28px 24px;
+      margin: 24px 0;
+      border: 1px solid var(--border);
+    }
+
+    .card-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 15px;
+      color: var(--denim-dark);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--denim-light);
+    }
+
+    /* SCHEDULE */
+    .schedule-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .schedule-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 15px;
+    }
+
+    .schedule-icon {
+      font-size: 18px;
+      min-width: 24px;
+      margin-top: 1px;
+    }
+
+    .schedule-label {
+      color: var(--warm-gray);
+      font-size: 13px;
+      min-width: 56px;
+    }
+
+    .schedule-value {
+      flex: 1;
+    }
+
+    .schedule-value a {
+      color: var(--denim);
+      text-decoration: underline;
+      font-size: 14px;
+    }
+
+    .note {
+      font-size: 13px;
+      color: var(--warm-gray);
+      margin-top: 4px;
+    }
+
+    /* PRICE */
+    .price-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 16px;
+      background: var(--denim-light);
+      border-radius: 8px;
+    }
+
+    .price-row .plan {
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .price-row .amount {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--denim-dark);
+    }
+
+    .price-note {
+      font-size: 12px;
+      color: var(--warm-gray);
+      margin-top: 10px;
+      line-height: 1.7;
+    }
+
+    /* CHECKLIST */
+    .checklist {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+    }
+
+    .checklist li {
+      display: flex;
+      gap: 10px;
+      font-size: 14px;
+      align-items: flex-start;
+    }
+
+    .checklist li::before {
+      content: "✓";
+      color: var(--sage);
+      font-weight: 700;
+      min-width: 16px;
+      margin-top: 2px;
+    }
+
+    /* CANCEL */
+    .cancel-box {
+      background: #FDF8F0;
+      border-left: 3px solid #D4A853;
+      border-radius: 0 8px 8px 0;
+      padding: 14px 16px;
+      font-size: 13px;
+      line-height: 1.8;
+      color: var(--warm-gray);
+    }
+
+    /* PAYMENT */
+    .payment-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+
+    .payment-tag {
+      background: var(--denim-light);
+      color: var(--denim-dark);
+      font-size: 13px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-weight: 500;
+    }
+
+    /* CTA */
+    .cta-section {
+      text-align: center;
+      padding: 32px 0 8px;
+    }
+
+    .cta-section p {
+      font-size: 14px;
+      color: var(--warm-gray);
+      margin-bottom: 20px;
+      line-height: 1.9;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--denim);
+      color: white;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 16px 48px;
+      border-radius: 50px;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: background 0.2s, transform 0.1s;
+      box-shadow: 0 4px 16px rgba(91,127,166,0.3);
+    }
+
+    .cta-btn:hover {
+      background: var(--denim-dark);
+      transform: translateY(-1px);
+    }
+
+    .cta-btn:active {
+      transform: translateY(0);
+    }
+
+    .cta-sub {
+      font-size: 12px;
+      color: var(--warm-gray);
+      margin-top: 14px;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 12px;
+      color: var(--warm-gray);
+      border-top: 1px solid var(--border);
+    }
+
+    /* DIVIDER */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 8px 0 16px;
+    }
+
+    /* August dates badge */
+    .date-badge {
+      display: inline-block;
+      background: var(--denim);
+      color: white;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 3px 12px;
+      border-radius: 4px;
+      margin-right: 6px;
+    }
+
+    .dates-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">akekure ryocoの</div>
+    <h1>GROUP YOGA</h1>
+    <div class="tagline">からだをほぐす、仲間とつながる、水曜の夜。</div>
+  </header>
+
+  <main>
+
+    <!-- 日程・場所 -->
+    <div class="card">
+      <div class="card-title">📅 開催日程・場所</div>
+      <div class="schedule-grid">
+
+        <div class="schedule-row">
+          <span class="schedule-icon">📆</span>
+          <span class="schedule-label">開催日</span>
+          <div class="schedule-value">
+            毎月第1・第3水曜日
+            <div class="note">8月の開催日</div>
+            <div class="dates-row">
+              <span class="date-badge">8月5日（水）</span>
+              <span class="date-badge">8月19日（水）</span>
+            </div>
+            <div class="note" style="margin-top:8px;">
+              空席状況：8月5日（水）<strong style="color:var(--denim-dark); font-size:16px;">○</strong>／8月19日（水）<strong style="color:var(--denim-dark); font-size:16px;">○</strong>
+              <div style="font-size:11px; margin-top:4px;">○：定員5名以上の空き　△：残り5名未満　🈵：満員御礼</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-row">
+          <span class="schedule-icon">🕖</span>
+          <span class="schedule-label">時間</span>
+          <div class="schedule-value">
+            19:45〜20:45（延長あり）
+            <div class="note">途中参加・退室OK（事前にご連絡ください）</div>
+          </div>
+        </div>
+
+        <div class="schedule-row">
+          <span class="schedule-icon">📍</span>
+          <span class="schedule-label">場所</span>
+          <div class="schedule-value">
+            味美ふれあいセンター 軽運動室<br>
+            〒486-0958 愛知県春日井市西本町1丁目15−1<br>
+            <a href="https://maps.app.goo.gl/efv6cKCCPrxMJ7N68" target="_blank">Googleマップで見る →</a>
+            <div class="note">🚃 味美駅より徒歩4分 ／ 🚗 駐車場あり</div>
+            <div class="note">※会場については変更になる場合があります。最新情報はLINEでお知らせします。</div>
+          </div>
+        </div>
+
+        <div class="schedule-row">
+          <span class="schedule-icon">👥</span>
+          <span class="schedule-label">定員</span>
+          <div class="schedule-value">
+            各回10名（5名以上で開催）
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 料金 -->
+    <div class="card">
+      <div class="card-title">💴 参加料金</div>
+      <div class="price-grid">
+        <div class="price-row">
+          <div class="plan">都度払い</div>
+          <div class="amount">2,000円</div>
+        </div>
+        <div class="price-row">
+          <div class="plan">月2回コース</div>
+          <div class="amount">3,600円</div>
+        </div>
+      </div>
+      <div class="price-note">
+        ※月2回コースは事前振込・先払いとなります。振替・返金はご対応できません。<br>
+        振込先は申込後にご案内します。
+      </div>
+      <div class="divider" style="margin-top:16px;"></div>
+      <div style="font-size:13px; color:var(--warm-gray); margin-bottom:8px;">お支払い方法</div>
+      <div class="payment-tags">
+        <span class="payment-tag">現金</span>
+        <span class="payment-tag">PayPay</span>
+        <span class="payment-tag">銀行振込（月2回コースのみ）</span>
+      </div>
+    </div>
+
+    <!-- 持ち物 -->
+    <div class="card">
+      <div class="card-title">🎒 持ち物</div>
+      <ul class="checklist">
+        <li>ヨガマット（お持ちでない方はレンタルあり／要事前連絡）</li>
+        <li>動きやすい服装</li>
+        <li>お飲み物</li>
+      </ul>
+    </div>
+
+    <!-- キャンセル -->
+    <div class="card">
+      <div class="card-title">📋 キャンセルについて</div>
+      <div class="cancel-box">
+        ・キャンセルは無料です（ご連絡をお願いします）<br>
+        ・開始時間以降の無断欠席は全額（2,000円）を頂戴します
+      </div>
+      <div class="note" style="margin-top:12px;">
+        施設（駐車場・設備など）に関するお問い合わせは、味美ふれあいセンターへ直接お願いします。
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-section">
+      <p>お申し込みはこちらから。<br>確認後にご連絡いたします🌿</p>
+      <a class="cta-btn" href="https://docs.google.com/forms/d/e/1FAIpQLScYnTE66FRbrOhAggjsZuiyKv4cnmaIb5d2ABHUDG6zDBbOsQ/viewform?usp=header" target="_blank">申し込む</a>
+      <div class="cta-sub">※ お申し込み後、詳細をLINEにてお送りします</div>
+    </div>
+
+  </main>
+
+  <footer>
+    &copy; akekure — ryoco
+  </footer>
+
+</body>
+</html>
