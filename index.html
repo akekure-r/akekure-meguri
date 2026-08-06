@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>グループヨガ | akekure</title>
+  <title>味美ヨガ | akekure</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,500&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -12,6 +12,8 @@
       --denim-light: #EAF0F7;
       --denim-dark: #3D5C7A;
       --sage: #8FA98A;
+      --gold: #D4A853;
+      --gold-light: #FDF8F0;
       --warm-gray: #6B6560;
       --text: #2E2B28;
       --border: #D8D2CA;
@@ -43,7 +45,7 @@
     }
 
     header h1 {
-      font-family: 'Cormorant', serif;
+      font-family: 'Cormorant', 'Noto Serif JP', serif;
       font-size: clamp(38px, 10vw, 56px);
       font-weight: 600;
       letter-spacing: 0.1em;
@@ -54,6 +56,17 @@
       font-size: 14px;
       color: rgba(255,255,255,0.85);
       letter-spacing: 0.05em;
+    }
+
+    header .renamed-note {
+      display: inline-block;
+      margin-top: 14px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.7);
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 20px;
+      padding: 3px 14px;
+      letter-spacing: 0.03em;
     }
 
     /* MAIN */
@@ -139,9 +152,22 @@
       border-radius: 8px;
     }
 
+    .price-row.special {
+      background: var(--gold-light);
+      border-left: 3px solid var(--gold);
+    }
+
     .price-row .plan {
       font-size: 14px;
       font-weight: 500;
+    }
+
+    .price-row .plan .sub {
+      display: block;
+      font-size: 11px;
+      color: var(--warm-gray);
+      font-weight: 400;
+      margin-top: 2px;
     }
 
     .price-row .amount {
@@ -149,6 +175,10 @@
       font-size: 18px;
       font-weight: 600;
       color: var(--denim-dark);
+    }
+
+    .price-row.special .amount {
+      color: #A87B2E;
     }
 
     .price-note {
@@ -266,7 +296,7 @@
       margin: 8px 0 16px;
     }
 
-    /* August dates badge */
+    /* Date badges */
     .date-badge {
       display: inline-block;
       background: var(--denim);
@@ -276,6 +306,11 @@
       padding: 3px 12px;
       border-radius: 4px;
       margin-right: 6px;
+      margin-bottom: 6px;
+    }
+
+    .date-badge.special {
+      background: var(--gold);
     }
 
     .dates-row {
@@ -290,8 +325,9 @@
 
   <header>
     <div class="brand">akekure ryocoの</div>
-    <h1>GROUP YOGA</h1>
+    <h1>味美ヨガ</h1>
     <div class="tagline">からだをほぐす、仲間とつながる、水曜の夜。</div>
+    <div class="renamed-note">GROUP YOGAは9月より「味美ヨガ」に名称変更しました</div>
   </header>
 
   <main>
@@ -306,14 +342,14 @@
           <span class="schedule-label">開催日</span>
           <div class="schedule-value">
             毎月第1・第3水曜日
-            <div class="note">8月の開催日</div>
+            <div class="note">9月の開催日（通常開催・月2回）</div>
             <div class="dates-row">
-              <span class="date-badge">8月5日（水）</span>
-              <span class="date-badge">8月19日（水）</span>
+              <span class="date-badge">9月2日（水）第2集会室（和室）</span>
+              <span class="date-badge">9月16日（水）軽運動室</span>
             </div>
-            <div class="note" style="margin-top:8px;">
-              空席状況：8月5日（水）<strong style="color:var(--denim-dark); font-size:16px;">△</strong> 残2名／8月19日（水）<strong style="color:var(--denim-dark); font-size:16px;">△</strong> 残1名
-              <div style="font-size:11px; margin-top:4px;">○：定員5名以上の空き　△：残り5名未満　🈵：満員御礼</div>
+            <div class="note" style="margin-top:10px;">9月は水曜日が5回あるため、5週目は特別開催（単発）です</div>
+            <div class="dates-row">
+              <span class="date-badge special">9月30日（水）軽運動室・特別開催</span>
             </div>
           </div>
         </div>
@@ -331,10 +367,11 @@
           <span class="schedule-icon">📍</span>
           <span class="schedule-label">場所</span>
           <div class="schedule-value">
-            味美ふれあいセンター 軽運動室<br>
+            味美ふれあいセンター（日程により会場が異なります）<br>
             〒486-0958 愛知県春日井市西本町1丁目15−1<br>
             <a href="https://maps.app.goo.gl/efv6cKCCPrxMJ7N68" target="_blank">Googleマップで見る →</a>
             <div class="note">🚃 味美駅より徒歩4分 ／ 🚗 駐車場あり</div>
+            <div class="note">9/2（水）は<strong>第2集会室（和室）</strong>、9/16・9/30は<strong>軽運動室</strong>です</div>
             <div class="note">※会場については変更になる場合があります。最新情報はLINEでお知らせします。</div>
           </div>
         </div>
@@ -365,19 +402,27 @@
           <div class="amount">2,000円</div>
         </div>
         <div class="price-row">
-          <div class="plan">月2回コース</div>
+          <div class="plan">月2回コース<span class="sub">9/2・9/16が対象</span></div>
           <div class="amount">3,600円</div>
+        </div>
+        <div class="price-row special">
+          <div class="plan">5週目特別開催（9/30）<span class="sub">月2回コース受講者</span></div>
+          <div class="amount">1,500円</div>
+        </div>
+        <div class="price-row special">
+          <div class="plan">5週目特別開催（9/30）<span class="sub">単発参加</span></div>
+          <div class="amount">2,000円</div>
         </div>
       </div>
       <div class="price-note">
         ※月2回コースは事前振込・先払いとなります。振替・返金はご対応できません。<br>
+        ※5週目（9/30）は特別開催のため月2回コースの対象外です。月2回コース受講者は1,500円、単発参加は2,000円でご参加いただけます。<br>
         振込先は申込後にご案内します。
       </div>
       <div class="divider" style="margin-top:16px;"></div>
       <div style="font-size:13px; color:var(--warm-gray); margin-bottom:8px;">お支払い方法</div>
       <div class="payment-tags">
         <span class="payment-tag">現金</span>
-        <span class="payment-tag">PayPay</span>
         <span class="payment-tag">銀行振込（月2回コースのみ）</span>
       </div>
     </div>
@@ -397,7 +442,7 @@
       <div class="card-title">📋 キャンセルについて</div>
       <div class="cancel-box">
         ・キャンセルは無料です（ご連絡をお願いします）<br>
-        ・開始時間以降の無断欠席は全額（2,000円）を頂戴します
+        ・開始時間以降の無断欠席は全額（お申し込みプランの料金）を頂戴します
       </div>
       <div class="note" style="margin-top:12px;">
         施設（駐車場・設備など）に関するお問い合わせは、味美ふれあいセンターへ直接お願いします。
